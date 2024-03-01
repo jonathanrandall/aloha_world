@@ -1,0 +1,14 @@
+running develop
+running egg_info
+creating xarm_pubsub.egg-info
+writing manifest file 'xarm_pubsub.egg-info/SOURCES.txt'
+writing manifest file 'xarm_pubsub.egg-info/SOURCES.txt'
+running build_ext
+running install_data
+creating /home/jonny/projects/aloha_world/contol_ws/install/xarm_pubsub/share
+creating /home/jonny/projects/aloha_world/contol_ws/install/xarm_pubsub/share/ament_index
+creating /home/jonny/projects/aloha_world/contol_ws/install/xarm_pubsub/share/ament_index/resource_index
+creating /home/jonny/projects/aloha_world/contol_ws/install/xarm_pubsub/share/ament_index/resource_index/packages
+copying resource/xarm_pubsub -> /home/jonny/projects/aloha_world/contol_ws/install/xarm_pubsub/share/ament_index/resource_index/packages
+creating /home/jonny/projects/aloha_world/contol_ws/install/xarm_pubsub/share/xarm_pubsub
+copying package.xml -> /home/jonny/projects/aloha_world/contol_ws/install/xarm_pubsub/share/xarm_pubsub

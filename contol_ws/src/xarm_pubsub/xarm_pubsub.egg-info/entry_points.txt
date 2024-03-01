@@ -1,0 +1,4 @@
+[console_scripts]
+master = xarm_pubsub.master_publisher:main
+puppet = xarm_pubsub.puppet_subscriber:main
+

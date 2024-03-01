@@ -4,3 +4,5 @@
 sim_ws/build/*
 sim_ws/install/*
 sim_ws/log/*
+from_tony_zhao/**
+xarm_gui/**
