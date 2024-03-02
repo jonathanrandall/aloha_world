@@ -26,6 +26,8 @@ setup(
             'master = xarm_pubsub.master_publisher:main',
             'puppet = xarm_pubsub.puppet_subscriber:main',
             'record_gui = xarm_pubsub.record_gui:main',
+            'image_pub = xarm_pubsub.camera_publisher:main',
+            'image_sub = xarm_pubsub.camera_subscriber:main',
         ],
     },
 )

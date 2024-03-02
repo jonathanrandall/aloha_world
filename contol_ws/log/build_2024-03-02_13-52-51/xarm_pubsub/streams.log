@@ -1,0 +1,8 @@
+[0.448s] Invoking command in '/home/jonny/projects/aloha_world/contol_ws/build/xarm_pubsub': PYTHONPATH=/home/jonny/projects/aloha_world/contol_ws/build/xarm_pubsub/prefix_override:/home/jonny/projects/aloha_world/contol_ws/install/xarm_pubsub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/jonny/projects/aloha_world/contol_ws/build/xarm_pubsub/build --no-deps install_data
+[0.599s] running develop
+[0.706s] running egg_info
+[0.707s] writing manifest file 'xarm_pubsub.egg-info/SOURCES.txt'
+[0.708s] running build_ext
+[0.709s] running install_data
+[0.709s] copying launch/rsp.launch.py -> /home/jonny/projects/aloha_world/contol_ws/install/xarm_pubsub/share/xarm_pubsub/launch
+[0.724s] Invoked command in '/home/jonny/projects/aloha_world/contol_ws/build/xarm_pubsub' returned '0': PYTHONPATH=/home/jonny/projects/aloha_world/contol_ws/build/xarm_pubsub/prefix_override:/home/jonny/projects/aloha_world/contol_ws/install/xarm_pubsub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/jonny/projects/aloha_world/contol_ws/build/xarm_pubsub/build --no-deps install_data

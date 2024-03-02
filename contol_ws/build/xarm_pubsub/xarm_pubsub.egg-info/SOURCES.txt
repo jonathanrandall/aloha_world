@@ -4,6 +4,8 @@ setup.py
 launch/rsp.launch.py
 resource/xarm_pubsub
 xarm_pubsub/__init__.py
+xarm_pubsub/camera_publisher.py
+xarm_pubsub/camera_subscriber.py
 xarm_pubsub/master_publisher.py
 xarm_pubsub/puppet_subscriber.py
 xarm_pubsub/record_gui.py
