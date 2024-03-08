@@ -1,7 +1,0 @@
-running develop
-running egg_info
-writing manifest file 'xarm_pubsub.egg-info/SOURCES.txt'
-running build_ext
-running install_data
-copying package.xml -> /home/jonny/projects/aloha_world/contol_ws/install/xarm_pubsub/share/xarm_pubsub
-copying launch/rsp.launch.py -> /home/jonny/projects/aloha_world/contol_ws/install/xarm_pubsub/share/xarm_pubsub/launch
