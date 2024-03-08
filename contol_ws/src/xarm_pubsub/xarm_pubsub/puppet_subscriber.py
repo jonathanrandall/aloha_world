@@ -96,9 +96,11 @@ class MinimalSubscriber(Node):
         
         t1 = time.time()
         t0 = float(positions[6])
+        # self.get_logger().info("Joint positions: %s" % ', '.join(str(pos) for pos in self.pos_prev))
         for i in range(0,6):
             self.pos_prev[i] = int(self.robot.getPosition(i+1))
             time.sleep(0.02)
+            # self.get_logger().info(f'Joint position_{self.pos_prev[i]}')
             pos_now = int(self.pos_prev[i])
             # self.robot.setPosition(i+1, positions_int[i], wait=False)
             # pos_now = int(self.robot.getPosition(i+1))
@@ -111,17 +113,19 @@ class MinimalSubscriber(Node):
         if self.record_params["start"]:
             self.max_timesteps=self.max_timesteps+1
             actual_dt_history.append([t0, t1, t2])
-            self.data_dict['/observations/qpos'].append(self.pos_prev)
+            self.data_dict['/observations/qpos'].append(self.pos_prev[:6])
+            self.get_logger().info("Joint positions: %s" % ', '.join(str(pos) for pos in self.pos_prev))
             self.data_dict['/action'].append(positions_int[:6])
         if self.record_params["stop"]: #(t2-self.start_time > 20):
             # stp_ep = False
             # strt_ep = False
             self.record_params["stop"]=False
             self.record_params["start"]=False
-            self.get_logger().info("episode recoreded")
+            self.get_logger().info(f"episode recoreded {len(self.data_dict['/action'])}")
             # record_episode()
             # self.mutex.release()
             time.sleep(1)
+            self.max_timesteps=1
         # self.mutex.release()
 
 

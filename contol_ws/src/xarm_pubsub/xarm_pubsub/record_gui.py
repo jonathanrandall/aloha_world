@@ -156,17 +156,25 @@ class puppet_gui(QMainWindow):
             obs = root.create_group('observations')
             image = obs.create_group('images')
             l1 = len(self.cs.data_dict['/observations/images/top'])
+            la = len(self.ps.data_dict['/action'])
+            lq = len(self.ps.data_dict['/observations/qpos'])
             _ = image.create_dataset('top', (l1, 480, 640, 3), dtype='uint8', 
                                      chunks=(1,480,640,3), )
-            _ = obs.create_dataset('qpos', (self.ps.max_timesteps, 6))
+            _ = obs.create_dataset('qpos', (lq, 6))
             # _ = obs.create_dataset('qvel', (max_timesteps, 14))
             # _ = obs.create_dataset('effort', (max_timesteps, 14))
-            _ = root.create_dataset('action', (self.ps.max_timesteps, 6))
+            _ = root.create_dataset('action', (la, 6))
 
             for name, array in self.ps.data_dict.items():
                 root[name][...] = array
             for name, array in self.cs.data_dict.items():
                 root[name][...] = array
+
+            #next clear the dictionary for next use.
+            for key in self.ps.data_dict:
+                self.ps.data_dict[key] = []
+            for key in self.cs.data_dict:
+                self.cs.data_dict[key] = []
         # print(f'Saving: {time.time() - t0:.1f} secs')
 
         return True

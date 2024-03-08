@@ -34,20 +34,41 @@ import cv2
 
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
-
+import subprocess
 
 data_queue = queue.SimpleQueue()
 
 
 stop_flag_cam=None
 
+def find_webcam_index(device_name):
+    command = "v4l2-ctl --list-devices"
+    output = subprocess.check_output(command, shell=True, text=True)
+    devices = output.split('\n\n')
+    
+    for device in devices:
+        if device_name in device:
+            lines = device.split('\n')
+            for line in lines:
+                if "video" in line:
+                    parts = line.split()
+                    for part in parts:
+                        if part.startswith('/dev/video'):
+                            print(part)
+                            return (part[10:])
 
 
 #this function reads the data from the serial port
 def get_image(data_queue):
     global stop_flag_cam
     stop_flag_cam = threading.Event()
-    cap = cv2.VideoCapture(2)
+
+    webcam_name = "C922 Pro Stream Webcam (usb-0000:00:14.0-4):"
+
+# Find the index of the webcam
+    webcam_index = int(find_webcam_index(webcam_name))
+
+    cap = cv2.VideoCapture(webcam_index)
 
 # Check if the webcam is opened successfully
     if not cap.isOpened():
