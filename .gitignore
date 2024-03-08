@@ -7,3 +7,6 @@ sim_ws/log/*
 from_tony_zhao/**
 xarm_gui/**
 episodes/**
+control_ws/log/*
+control_ws/build/*
+control_ws/install/*
