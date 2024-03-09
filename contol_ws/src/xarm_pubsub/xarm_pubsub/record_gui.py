@@ -87,7 +87,7 @@ class puppet_gui(QMainWindow):
 
         self.running = True
 
-        self.dataset_path = '~/projects/aloha_world/episodes/wave_hello'#'~/tmp/my_episode'
+        self.dataset_path = '~/projects/aloha_world/episodes/tmp/'#wave_hello'#'~/tmp/my_episode'
 
     def stop_episode(self):
         self.record_params["stop"]=True

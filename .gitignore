@@ -12,4 +12,9 @@ episodes/**
 contol_ws/build/**
 contol_ws/log/**
 contol_ws/install/**
+*__pycache__*
+*/__pycache__/**
+ckpt_dir/**
+ckpt_dir*/**
+ckpt_dir*
 
