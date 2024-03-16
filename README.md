@@ -24,7 +24,11 @@ sudo apt remov brltty
 ### contol_ws/src/xarm_pubsub
 This contains the ros2 package that I use to record the robot actions for imitation learning.
 Need to have ros2 installed. I'm using Iron Irwini.
-You can build with colcon
+You can build with colcon by typing:
+```bash
+colcon build --symlink-install
+```
+
 
 
 
