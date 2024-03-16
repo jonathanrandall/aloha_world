@@ -56,6 +56,10 @@ os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = '/usr/lib/x86_64-linux-gnu/qt5/plugi
 To get the `QT_QPA_PLATFORM_PLUGIN_PATH`, I asked chatgpt to write me some code.
 I used the PyQt5 library to display the image (because I couldn't get it to work with the `cv2.imshow()` function to work with the gui.
 
+###     contol_ws/src/xarm_pubsub/launch/
+__rsp.launch.py__ 
+This is the launch file for the tele operation imititation learning.
+
 ### tony_zhao_forked/act
 This is the code forked from Tony Zhao's [ACT](https://github.com/tonyzhaozh/act). I am using this for training and inference.
 I've made a few changes. I am using one arm with 6 joint angles. Tony Zhao was using two arms with 7 variables each. Parts of the input and the output were 14 dimensional, and this was hard coded in the models. I ahd to change this to 6 to match my model. 
