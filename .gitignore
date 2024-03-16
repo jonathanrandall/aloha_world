@@ -19,6 +19,7 @@ ckpt_dir*/**
 ckpt_dir*
 instructables*
 sim_ws*
+read_controller*
 tmp*
 *tmp*
 
