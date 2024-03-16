@@ -47,7 +47,7 @@ This has the gui for starting and stopping the recordings. This uses the python_
 import os
 os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = '/usr/lib/x86_64-linux-gnu/qt5/plugins'
 ```
-
+To get the `QT_QPA_PLATFORM_PLUGIN_PATH`, I asked chatgpt to write me some code.
 
 
 
