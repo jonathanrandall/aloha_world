@@ -38,6 +38,7 @@ __puppet_subscriber.py__
 This subscribes to the /joint_states topic and sends the data to the robot.
 __camera_publisher.py__
 This publishers data from the webcam onto the /Image topic. Again, this runs a get camera on thread and then when it wants to publish the image, it throws away everything in the queue except the most recent image. This is because the images can buffer on the input, which leads to a lag.
+This file also includes a `find_webcam_index(device_name)` function for getting the index of the webcam, which can change from run to run.
 __camera_subscriber.py__
 This subscribes to the /Image topic.
 __record_gui.py__
@@ -48,6 +49,7 @@ import os
 os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = '/usr/lib/x86_64-linux-gnu/qt5/plugins'
 ```
 To get the `QT_QPA_PLATFORM_PLUGIN_PATH`, I asked chatgpt to write me some code.
+I used the PyQt5 library to display the image (because I couldn't get it to work with the `cv2.imshow()` function to work with the gui.
 
 
 
