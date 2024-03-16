@@ -105,10 +105,11 @@ class MinimalSubscriber(Node):
             # self.robot.setPosition(i+1, positions_int[i], wait=False)
             # pos_now = int(self.robot.getPosition(i+1))
             pos_next = positions_int[i]
-            if (abs(pos_now-pos_next)>20): #this will stop vibrations on the robot puppet arm
+            if (abs(pos_now-pos_next)>10): #this will stop vibrations on the robot puppet arm
                 self.robot.setPosition(i+1, positions_int[i], wait=False)
                 self.pos_prev[i] = pos_next
                 # self.get_logger().info("setting positions")
+        time.sleep(0.2)
         t2 = time.time()
         if self.record_params["start"]:
             self.max_timesteps=self.max_timesteps+1

@@ -31,22 +31,23 @@ import queue
 
 image_queue = queue.SimpleQueue()
 
-def disp_image(image_queue):
-    # global stop_flag_cam
-    stop_flag_cam = threading.Event()
+#I don't use this
+# def disp_image(image_queue):
+#     # global stop_flag_cam
+#     stop_flag_cam = threading.Event()
     
 
-    width = 640
-    height = 480
-    data = None
-    while not stop_flag_cam.is_set():
-        data = None
-        while not image_queue.empty():
-            data = image_queue.get()
-        # print(data.shape)
-        if data is not None:
-            cv2.imshow("RGB", data)
-            cv2.waitKey(1)
+#     width = 640
+#     height = 480
+#     data = None
+#     while not stop_flag_cam.is_set():
+#         data = None
+#         while not image_queue.empty():
+#             data = image_queue.get()
+#         # print(data.shape)
+#         if data is not None:
+#             cv2.imshow("RGB", data)
+#             cv2.waitKey(1)
 
 
 

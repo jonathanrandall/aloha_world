@@ -31,7 +31,7 @@ import time
 import numpy as np
 
 
-data_queue = queue.SimpleQueue()
+data_queue_mp = queue.SimpleQueue()
 
 ser = serial.Serial('/dev/ttyUSB0', 115200) 
 stop_flag=None
@@ -76,8 +76,8 @@ class MinimalPublisher(Node):
         t0 = time.time()
         #get the serial input from the master
         data =[]
-        while not data_queue.empty():
-            data = data_queue.get()
+        while not data_queue_mp.empty():
+            data = data_queue_mp.get()
         
         if len(data):
             self.sync_data = data
@@ -92,7 +92,7 @@ class MinimalPublisher(Node):
 
 
 def main(args=None):
-    serial_thread = threading.Thread(target=serial_reader, args=(data_queue,), daemon=False)
+    serial_thread = threading.Thread(target=serial_reader, args=(data_queue_mp,), daemon=False)
     serial_thread.start()
     rclpy.init(args=args)
 
