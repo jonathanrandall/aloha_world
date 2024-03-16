@@ -15,11 +15,11 @@ The directory contains the Arduino sketch for the synchronisation controller. Th
 
 I have updated the Arduino sketch from the hiwonder documentation, so that it doesn't output when there is an error and it prints to the serial monitor every 50ms. I have used the Arduino IDE to upload to the Nano. Note, to get this to work with Linux, you need to remove the brail terminal via:
 
-<pre>
-  ```bash
-  sudo apt remov brltty
-  ```
-</pre>
+
+```bash
+sudo apt remov brltty
+```
+
 
 
 
