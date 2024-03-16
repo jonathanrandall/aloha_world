@@ -5,8 +5,6 @@ sim_ws/build/*
 sim_ws/install/*
 sim_ws/log/*
 from_tony_zhao/**
-tony_zhao_forked/aloha/**
-tony_zhao_forked/*/.git
 xarm_gui/**
 episodes/**
 contol_ws/build/**
