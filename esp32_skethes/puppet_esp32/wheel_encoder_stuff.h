@@ -1,8 +1,9 @@
 #ifndef WHEEL_ENCODER_STUFF_H_
 #define WHEEL_ENCODER_STUFF_H_
 
+QueueHandle_t cmd_queue;
 
-const byte MOTOR1 = 21;  // Motor 1 Interrupt Pin - INT 0
+const byte MOTOR1 = 23;  // Motor 1 Interrupt Pin - INT 0
 const byte MOTOR2 = 19;  // Motor 2 Interrupt Pin - INT 1
 unsigned long rotary_time=1000;
 
