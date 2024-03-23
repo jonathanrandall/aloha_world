@@ -19,5 +19,5 @@ sim_ws*
 read_controller*
 tmp*
 *tmp*
-
+*.pio*
 
