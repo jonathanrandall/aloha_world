@@ -3,7 +3,7 @@
 
 QueueHandle_t cmd_queue;
 
-const byte MOTOR1 = 23;  // Motor 1 Interrupt Pin - INT 0
+const byte MOTOR1 = 21;  // Motor 1 Interrupt Pin - INT 0
 const byte MOTOR2 = 19;  // Motor 2 Interrupt Pin - INT 1
 unsigned long rotary_time=1000;
 
@@ -36,8 +36,8 @@ void start_wheel_encoder(){
 
 void reset_wheel_encoder_data(){
 
-  Serial.println(counter1);
-  Serial.println(counter2);
+  // Serial.println(counter1);
+  // Serial.println(counter2);
   counter1 = 0;
   counter2 = 0;
   

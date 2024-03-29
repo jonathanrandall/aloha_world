@@ -17,6 +17,8 @@
 #define AUTO_STOP_INTERVAL 2000
 unsigned long lastMotorCommand;
 
+#define button_pin 25
+
 /// Added static IP
 // Set your Static IP address
 IPAddress local_IP(192, 168, 1, 211);
@@ -29,6 +31,8 @@ IPAddress secondaryDNS(8, 8, 4, 4); // optional
 
 AsyncWebServer server(80);
 void handleRequest(AsyncWebServerRequest *request);
+
+int fwd_back;
 
 void init_wifi()
 {
@@ -57,13 +61,22 @@ void init_wifi()
 
 void handleRequest(AsyncWebServerRequest *request)
 {    
+    
+    fwd_back = (int) (0xFFFF & digitalRead(button_pin));
     ///get_encoders
     String resp;
-    resp = String(counter1) + " " + String(counter1);
+    resp = String(counter1) + " " + String(counter2) +" "+ String(fwd_back);
 
     request->send(200, "text/plain", resp);
 
     reset_wheel_encoder_data();
 }
+
+
+
+
+
+
+
 
 #endif

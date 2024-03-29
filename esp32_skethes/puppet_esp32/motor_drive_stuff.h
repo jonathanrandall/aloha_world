@@ -15,7 +15,7 @@ int rmI1 = 12; //green
 int rmI2 = 27; //blue
 int lmI1 = 25; // H out1 = H | L out1 = L | H short break | L stop purple
 int lmI2 = 26; // L out2 = L | H out2 = H | H short break | L stop brown
-int STDBY = 19; //Low is off (current save) //not connected so far
+// int STDBY = 19; //Low is off (current save) //not connected so far
 
 
 int noStop = 0;
@@ -26,7 +26,7 @@ const int motorPWMChannnelA = 7;
 const int motorPWMChannnelB = 2;
 uint8_t lresolution = 8;
  
-uint8_t  motor_speed   = 160;
+uint8_t  motor_speed   = 120;
 volatile unsigned long previous_time = 0;
 volatile unsigned long move_interval = 250;
 
@@ -149,6 +149,7 @@ void robot_move(long *enc){
   while ((counter1+counter2) < (l1 + r1)){
     robot_fwd();
   }
+  reset_wheel_encoder_data();
 
   robot_stop();
   
@@ -156,7 +157,7 @@ void robot_move(long *enc){
 
 void robot_move_loop(void *params){
   int spd_prev=0;
-  long *rec_cmd;
+  long rec_cmd[3];
 
   while(true){
     if (spd_prev!=motor_speed){
@@ -164,12 +165,17 @@ void robot_move_loop(void *params){
       spd_prev = motor_speed;
     }
 
-    if(xQueueReceive(cmd_queue, &rec_cmd, pdMS_TO_TICKS(2))== pdTRUE) {
-      while ((counter1+counter2) < (rec_cmd[0] + rec_cmd[1])){
-        robot_fwd();
+    if(xQueueReceive(cmd_queue, &rec_cmd, pdMS_TO_TICKS(1))== pdTRUE) {
+      while ((counter1+counter2) < (rec_cmd[0] + rec_cmd[1])){     
+        if(rec_cmd[2]){
+              robot_fwd();
+        } else {  //move in reverse
+          robot_back();
+        }
       }
     } else{
       robot_stop();
+      reset_wheel_encoder_data();
     }
     
 

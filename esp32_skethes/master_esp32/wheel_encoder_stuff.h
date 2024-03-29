@@ -7,8 +7,8 @@ const byte MOTOR2 = 19;  // Motor 2 Interrupt Pin - INT 1
 unsigned long rotary_time=1000;
 
 
-volatile unsigned int counter1 = 0;
-volatile unsigned int counter2 = 0;
+volatile unsigned long counter1 = 0;
+volatile unsigned long counter2 = 0;
  
 // Float for number of slots in encoder disk
 float diskslots = 20;  // Change to match value of encoder disk
