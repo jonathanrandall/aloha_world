@@ -18,7 +18,7 @@ The directory contains the Arduino sketch for the synchronisation controller. Th
 I have updated the Arduino sketch from the hiwonder documentation, so that it doesn't output when there is an error and it prints to the serial monitor every 50ms. I have used the Arduino IDE to upload to the Nano. Note, to get this to work with Linux, you need to remove the brail terminal via:
 
 ```bash
-sudo apt remov brltty
+sudo apt remove brltty
 ```
 
 ### contol_ws/src/xarm_pubsub
@@ -27,6 +27,11 @@ Need to have ros2 installed. I'm using Iron Irwini.
 You can build with colcon by typing from the contol_ws directory:
 ```bash
 colcon build --symlink-install
+```
+Once you have done a __source install/setup.bash__, you can run this by typing
+
+```bash
+ros2 launch xarm_pubsub rsp.launch.py
 ```
 
 ### contol_ws/src/xarm_pubsub/xarm_pubsub/
