@@ -5,7 +5,7 @@ sim_ws/build/*
 sim_ws/install/*
 sim_ws/log/*
 xarm_gui/**
-episodes/**
+*.hdf5
 contol_ws/build/**
 contol_ws/log/**
 contol_ws/install/**
